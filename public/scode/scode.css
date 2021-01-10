@@ -1,0 +1,54 @@
+
+.flex-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+}
+
+.main{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-item{
+    margin: auto;
+}
+
+#gitlab{
+    max-width:100%;
+    max-height:100%;
+    position: abslute;
+}
+
+#github{
+    max-width:100%;
+    max-height:100%;
+}
+
+.imgref{
+    height: 300px;
+    width: 300px;
+    margin: 100px;
+
+}
+
+.imagelabel{
+    height: 300px;
+    width: 300px;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+
+    font-family: "Audiowide", sans-serif;
+    font-size: 30px;
+}
+.imgref:hover > img {opacity: 0.3;} 
+.imgref:hover > .imagelabel {opacity: 3;}
