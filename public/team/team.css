@@ -1,51 +1,57 @@
-body {
-	overflow: hidden;
-	margin: 0;
-	font-family: "Limelight", sans-serif;
-	text-rendering: optimizeLegibility;
-}
 
-.well {
-	position: relative;
-	overflow: hidden;
-	transition: 1s cubic-bezier(0.5, 0, 0.5, 1);
-}
 
-.top {
-	font-size: 80%;
-	color: hsla(0, 0%, 100%, .25);
-	position: relative;
-	top: -.2em;
-	cursor: pointer;
-}
+* {
+    box-sizing: border-box;
+  }
 
-.panel {
-	position: relative;
-	height: 100vh;
-	overflow: hidden;
-	font-size: 10vmin;
-	padding: 1em;
-	box-sizing: border-box;
-	color: hsla(0, 0%, 100%, .1);
-	cursor: default;
-}
+  .main{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+  }
 
-.panel:nth-child(1) {
-	background: #012345;
-}
+  
+  /* All the snapping stuff */
+  .scroll-container {
+    width: 90vw;
+    height: 90vh;
+    margin: 3rem auto;
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+  
+  section {
+    overflow-y: auto;
+    height: 100%;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+  }
+  
+  /* Other styles */
+  section {
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: whitesmoke;
+  }
+  
+  section:nth-child(2n) {
+    background-color: turquoise;
+  }
+  
+  section:nth-child(3n) {
+    background-color: tomato;
+  }
 
-.panel:nth-child(2) {
-	background: #123456;
-}
-
-.panel:nth-child(3) {
-	background: #234567;
-}
-
-.panel:nth-child(4) {
-	background: #345678;
-}
-
-.panel:nth-child(5) {
-	background: #456789;
-}
+  .profileimg{
+    margin-right: 2rem;
+    position: sticky;
+    top: 0;
+  }
+  
+  
