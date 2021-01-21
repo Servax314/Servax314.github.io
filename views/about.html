@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+  <head onload="currentSlide(1);">
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/about/about.css">
     <link rel="stylesheet" href="/navbar/navbar.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
     <script src="/about/about.js"></script>
     <script src="/navbar/navbar.js"></script>
+    
+
+      
   </head>
 
   <div class="navbar">
@@ -18,7 +24,156 @@
   </div>
 
   <div class = 'main'>
+    <div class='title'>REBOOT</div>
+    <div class='subtitle'>From hopeless to limitless</div>
+    <!-- <img src="/about/logo.png"> -->
+   <!--  <img src="/about/robot.jpg" style="width: 50vw; margin-top: 2vh;display: block;margin-left: auto;margin-right: auto;"> -->
+   <div class="slideshow-container">
 
+    
+    
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="/about/robot.jpg"style="width:100%;display: block;margin-left: auto;margin-right: auto;">
+      <div class="text"></div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="/about/robot2.jpg" style="width:100%;display: block;margin-left: auto;margin-right: auto;">
+      <div class="text"></div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="/about/logo.png" style="width:47%;display: block;margin-left: auto;margin-right: auto;">
+      <div class="text"></div>
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+
+    <section class="covid">
+      <h2>
+        Battling through the COVID pandemic
+      </h2>
+
+      <p>The COVID-19 crises made us work from home during the whole project. We adapted to that unforseen constraint and build ourselves remote setup to work as a group. </p>
+      <p>After Jean-Baptiste was done constructing and flashing the robot, Nicolas collected it and set up an SSH server on the robot that the entire team could connect to it through Nicolas's IP via port-forwarding.</p>
+      <p>So that everyone could run test, Nicolas also set up a live video stream on YouTube and Google Meet so that Jean-Baptiste and Brehima could have a visual on the robot. That was especially useful to Brehima for his movement tests.</p>
+
+      <div class="gallery-image">
+        <a href="/about/setup_nicolas.jpg" target="_blank">
+          <div class="img-box">
+            <img src="/about/setup_nicolas.jpg" alt="" />
+            <div class="transparent-box">
+              <div class="caption">
+                <p>Home setup</p>
+                <p class="opacity-low">Nicolas's</p>
+              </div>
+            </div> 
+          </div>
+        </a>
+        <a href="/about/setup_brehima.JPG" target="_blank">
+          <div class="img-box">
+            <img src="/about/setup_brehima.JPG" alt="" />
+            <div class="transparent-box">
+              <div class="caption">
+                <p>Home setup</p>
+                <p class="opacity-low">Brehima's</p>
+              </div>
+            </div> 
+          </div>
+        </a>
+        <a href="/about/setup_jb.JPG" target="_blank">
+          <div class="img-box">
+            <img src="/about/setup_jb.JPG" alt="" />
+            <div class="transparent-box">
+              <div class="caption">
+                <p>Home setup</p>
+                <p class="opacity-low">Jean-Baptiste's</p>
+              </div>
+            </div> 
+          </div>
+        </a>
+      </div>
+
+      <p>The arena also had to be build from home as the event would not take place in Eurecom. Therefore, Nicolas set up the arena 3 days before the competition in order to test the strategy beforehand. The arena actually had to be built twice as the first one had cracks on the floor hence altering the robot movements.</p>
+
+      <div class="gallery-image">
+        <a href="/about/arena1.JPG" target="_blank">
+          <div class="img-box">
+            <img src="/about/arena1.JPG" alt="" />
+            <div class="transparent-box">
+              <div class="caption">
+                <p>Home setup</p>
+                <p class="opacity-low">Nicolas's</p>
+              </div>
+            </div> 
+          </div>
+        </a>
+        <a href="/about/setup_brehima.JPG" target="_blank">
+          <div class="img-box">
+            <img src="/about/setup_brehima.JPG" alt="" />
+            <div class="transparent-box">
+              <div class="caption">
+                <p>Home setup</p>
+                <p class="opacity-low">Brehima's</p>
+              </div>
+            </div> 
+          </div>
+        </a>
+      </div>
+
+  </section>
+
+
+
+
+    <section class="video">
+      <h2>
+        Performance video
+      </h2>
+      <video width="1080" height="720" controls>
+        <source src="movie.mp4" type="video/mp4">
+        <source src="movie.ogg" type="video/ogg">
+      Your browser does not support the video tag.
+      </video> 
+    </section>
+    <section class="gallery">
+      <h2>
+        Gallery
+      </h2>
+
+  <div class="gallery-image">
+    <a href="https://picsum.photos/350/250?image=444" target="_blank">
+      <div class="img-box">
+        <img src="https://picsum.photos/350/250?image=444" alt="" />
+        <div class="transparent-box">
+          <div class="caption">
+            <p>Library</p>
+            <p class="opacity-low">Architect Design</p>
+          </div>
+        </div> 
+      </div>
+    </a>
+    
   </div>
+
+    </section>
+
+    
+  </div>
+
+  <script src="/about/about.js"></script>
 
 </html>

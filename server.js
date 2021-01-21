@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const URI = require('./config/keys').MongoURI
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 80;
 
 
 const app = express();

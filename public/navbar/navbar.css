@@ -24,6 +24,7 @@
 }
 
 /* Main content */
-.main {
-  margin-top: 30px; /* Add a top margin to avoid content overlay */
+.main{
+  margin-top: 5vh; /* Add a top margin to avoid content overlay */
 }
+

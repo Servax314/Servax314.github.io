@@ -1,0 +1,34 @@
+The differents variables used to implement the strategy: 
+
+bool loaded_robot
+bool edge_detected 
+bool obstacle_touched
+bool empty
+bool destination_container
+int heading // -1 south / +1 north (top of the map) 
+int robot_y_position
+
+The different functions (names are self-explanatory):  
+
+find_next_container:
+This function is reponsible to find the next container in the map. For that, the function needs to monitor if an edge is detected (edge_detected). It also needs the heading of the robot to position it. Furthermore, it needs to know if the unknown cube has already been spotted or not (unknown_cube) to perform the move_toward_the_wall function. 
+
+type_of_container:
+To know the type of the container spotted by the sonar we need to know:
+- the heading of the robot 
+- the position of the robot on the y axis 
+- the positions of all the containers on the y axis 
+Examples:
+If the robot is in the first zone (unknown zone) then the cube is the unknown cube.
+If the robot heads north (top of the map) then the cube is a cube containing balls.
+
+container_is_adapted:
+To know whether or not the container is adapted we have to look at different flags:
+- loaded_robot  
+- flags of the container (empty, destination_container) 
+Examples: 
+The container is adapted if the robot is loaded and the container is a container where we have to put balls. We can have additional constraints: previous conditions + the cube has to be empty.
+
+go_to_container:
+To go to the container spotted we need to know the heading of the robot and the action to perform (grabbing or releasing the balls) when the cube is hurted (obstacle_touched). 
+
