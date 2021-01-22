@@ -27,6 +27,8 @@
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    margin-bottom: 10vh;
+
   }
   
   section {

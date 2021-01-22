@@ -32,8 +32,8 @@
         </section>
         <section>
           <h1 style="width:100%;display: block;margin-left: auto;margin-right: auto; text-align: center;">CLAMP</h1>
-          <p>The original idea with the clamp was to grab several balls at a time. Then, since we only had 2 motors left, the clamp had to be designed without a motorisation to grab the ball. The 2 motors were used to control the height of the clamp and the angle of the arm.</p> 
-          <p>We ended up with this clamp (picture below). Elastic strings were used so that applying force onto the ball would trap them inside the net. The main advantages are that the balls do not need to be in a particular place to be grabbed, hence removing a lot of indeterminism.</p>
+          <p>The original idea with the clamp was to grab several balls at a time. The clamp had to be designed motorless, as the 2 motors left were used to control the height of the clamp and the angle of the arm.</p> 
+          <p>We ended up with this clamp (picture 1&2). Elastic strings were used so that applying force onto the ball would trap them inside the net. The main advantages are that the balls do not need to be in a particular place to be grabbed, hence removing a lot of indeterminism.</p>
           <div class="gallery-image">
             <a href="/architecture/clamp1.jpg" target="_blank">
               <div class="img-box">
@@ -59,7 +59,7 @@
             </a>
           </div>
           <p>Originally, the clamp was mainly made of strings, putting a lot of tensile force on the clamp structure. Therefore, it was decided to add a solide rod on the front to maintain the squared shape structure tailored made for the cubes.</p>
-          <p>As for the release of the balls, the back opening is wide enough to let all 4 of them pass through. The mechanism is detailed in the next section.</p>
+          <p style="margin-bottom: 5vh;">As for the release of the balls, the back opening is wide enough to let all 4 of them pass through.</p>
         </section>
         <section>
           <h1 style="width:100%;display: block;margin-left: auto;margin-right: auto; text-align: center;">ARM</h1>
@@ -91,8 +91,8 @@
           <h2>Scissor lift</h2>
           <div class="flex">
             <div class="paragraph">
-              <p>The design of a scissor-like lift enable us to have a very good precision when lowering or lifting the clamp. The motor1 rotation was translated to a wheel using threaded cylinders, producing a rotation of the handle that induced a translation of the lift contact point accross the support rods (video 1). 3200 tacho counts are needed to fully lower it. (picture 3)</p>
-              <p>The main drawback of this design was the amount of stress put on delicate pieces such as the handle (picture 4). The weight of the clamp also added inaccuracy when controlling the angle of the arm: creating an offset of 6 tacho counts when using the motor2 compared to the unloaded situation.</p>
+              <p>The design of a scissor-like lift enables us to have a very good precision when lowering or lifting the clamp. The motor1 rotation is translated to a wheel using threaded cylinders, producing a rotation of the handle that induces a translation of the lift contact point accross the support rods (video 1). 3200 tacho counts are needed to fully lower it. (picture 3)</p>
+              <p>The main drawback of this design was the amount of stress put on delicate pieces such as the handle (picture 4). The weight of the clamp also added inaccuracy when controlling the angle of the arm: creating an offset of 6 tacho counts when using the motor2 compared to an unloaded situation.</p>
             </div>
             <video width="320" height="240" controls style="margin-right: 2vw;">
               <source src="/architecture/motor1.mp4" type="video/mp4">
@@ -125,7 +125,7 @@
           </div>
           <h2>Main rod</h2>
           <p>The main rod connects the scissor lift to the base structure, while allowing a degree of freedom for the slide. Originally, the only point of contact was the grey rod, but a black one was added on the side for sturdiness. (picture 5)</p>
-          <p>To add suport for the resting position of the arm, 2 black support wheels were also added need the motor2. (picture 2)</p>
+          <p>To add suport for the resting position of the arm, 2 black support wheels were also added beneath the motor2. (picture 2)</p>
           <div class="gallery-image">
             <a href="/architecture/secondrod.jpg" target="_blank">
               <div class="img-box">
@@ -142,10 +142,10 @@
         </section>
         <section>
           <h1 style="width:100%;display: block;margin-left: auto;margin-right: auto; text-align: center;">SENSORS</h1>
-          <p>3 sensors were used on the robot : the sonar, the touch-sensor and the gyroscope. They all played a role in our finale strategy.</p>
-          <p>The touch-sensor is mounted on the front of the robot. A pad was added on its tip to distrubute evenly the force applied to a cube when pushed. It is only used when the clamp is up as it's not accessible otherwise. It is mounted on a moveable rail to adjust its horizontal position.</p>
+          <p>3 sensors were used on the robot : the sonar, the touch-sensor and the gyroscope. They all played a role in our final strategy.</p>
+          <p>The touch-sensor is mounted on the front of the robot. A pad was added on its tip to distribute evenly the force applied to a cube when pushed. It is only used when the clamp is up as it is not accessible otherwise. It is mounted on a mobile rail to adjust its horizontal position.</p>
           <p>The sonar is placed on the right side of the robot. It is used to detect cubes along the way and a potential direction drift to be corrected. It is mounted on a fixed rail. We have had some issues with it, but turns out it was a wire issue. </p>
-          <p>Finally, the gyroscope is used to set the rough direction of the robot. The direction is then refined using the sonar. This piece is mounted on the left side of the robot to insure an approximate symmetry of the robot, on a fixed rail. </p>
+          <p>Finally, the gyroscope is used to set the rough direction of the robot. The direction is then refined using the sonar. This piece is mounted on the left side of the robot to ensure the symmetry of the robot, on a fixed rail. </p>
           <div class="gallery-image" >
             <a href="/architecture/front.jpg" target="_blank">
               <div class="img-box">
@@ -170,7 +170,7 @@
               </div>
             </a>
           </div>
-          <p style="margin-bottom: 2vh;">Note on the brick: a consequence of such an architecture allowed us to put the brick vertically with all 9 ports accessible, including the charging one.</p>
+          <p style="margin-bottom: 2vh;">Note on the brick: a consequence of such an architecture allowed us to put the brick vertically with all 9 ports accessible, including the battery port.</p>
 
         </section>
 
