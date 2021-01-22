@@ -16,7 +16,7 @@ app.use(express.static(__dirname +'/public'));
 
 app.use('/',require('./routes/about.js'));
 app.use('/',require('./routes/algo.js'));
-app.use('/',require('./routes/robot.js'));
+app.use('/',require('./routes/architecture.js'));
 app.use('/',require('./routes/scode.js'));
 app.use('/',require('./routes/team.js'));
 

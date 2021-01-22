@@ -3,22 +3,77 @@
 
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="/about/algo.css">
+    <link rel="stylesheet" href="/architecture/architecture.css">
     <link rel="stylesheet" href="/navbar/navbar.css">
-    <script src="/about/algo.js"></script>
+    <link rel="stylesheet" href="/about/about.css">
+
+    <script src="/about/architecture.js"></script>
     <script src="/navbar/navbar.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
   </head>
 
   <div class="navbar">
     <a href="/">About</a>
-    <a href="/robot">Robot architechture</a>
+    <a href="/architecture">Robot architechture</a>
     <a href="/scode">Source code</a>
     <a href="/algo">Algorithms</a>
     <a href="/team">Team</a>
   </div>
 
   <div class = 'main'>
-
+    <main class="scroll-container">
+        <section class="cover">
+          <h1 style="width:100%;display: block;margin-left: auto;margin-right: auto; text-align: center;">ROBOT ARCHITECTURE</h1>
+          <p style="text-align: center;">Scroll right to discover our robot's architecture. Conceptualized and built by Jean-Baptiste, tweaked by Nicolas.</p>
+          <p style="text-align: center;">From left to right: clamp, arm, sensors and the robot characteristic.</p>
+          <img src="/architecture/robot.jpg" style="width:40vw;display: block;margin-left: auto;margin-right: auto;"> 
+        </section>
+        <section>
+          <h1 style="width:100%;display: block;margin-left: auto;margin-right: auto; text-align: center;">CLAMP</h1>
+          <p>The original idea with the clamp was to grab several balls at a time. Then, since we only had 2 motors left, the clamp had to be designed without a motorisation to grab the ball. The 2 motors were used to control the height of the clamp and the angle of the arm.</p> 
+          <p>We ended up with this clamp (picture below). Elastic strings were used so that applying force onto the ball would trap them inside the net. The main advantages are that the balls do not need to be in a particular place to be grabbed, hence removing a lot of indeterminism.</p>
+          <div class="gallery-image">
+            <a href="/architecture/clamp1.jpg" target="_blank">
+              <div class="img-box">
+                <img src="/architecture/clamp1.jpg" alt="" />
+                <div class="transparent-box">
+                  <div class="caption">
+                    <p>Clamp close up</p>
+                    <p class="opacity-low"></p>
+                  </div>
+                </div> 
+              </div>
+            </a>
+            <a href="/architecture/clamp2.jpg" target="_blank">
+              <div class="img-box">
+                <img src="/architecture/clamp2.jpg" alt="" />
+                <div class="transparent-box">
+                  <div class="caption">
+                    <p>Clamp + arm</p>
+                    <p class="opacity-low"></p>
+                  </div>
+                </div> 
+              </div>
+            </a>
+          </div>
+        </section>
+        <section>
+          <h1 style="width:100%;display: block;margin-left: auto;margin-right: auto; text-align: center;">ARM</h1>
+          <p>Scroll right to discover our robot's architecture. Conceptualized and built by Jean-Baptiste, tweaked by Nicolas.</p>
+        </section>
+        <section>
+          <h1 style="width:100%;display: block;margin-left: auto;margin-right: auto; text-align: center;">SENSORS</h1>
+          <p>Scroll right to discover our robot's architecture. Conceptualized and built by Jean-Baptiste, tweaked by Nicolas.</p>
+        </section>
+        <section>
+          <h1 style="width:100%;display: block;margin-left: auto;margin-right: auto; text-align: center;">ROBOT CHARACTERISTICS</h1>
+          <p>Scroll right to discover our robot's architecture. Conceptualized and built by Jean-Baptiste, tweaked by Nicolas.</p>
+        </section>
+        
+        
+      </main>
   </div>
 
 </html>

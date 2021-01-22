@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+    
+  }
+
+  .main{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      height: 92%;
+  }
+  
+
+  h1{
+    font-family: "Audiowide", sans-serif;
+    font-size: 55px;
+    margin-bottom: 3vh;
+}
+  
+  /* All the snapping stuff */
+  .scroll-container {
+    width: 90vw;
+    height: 85vh;
+    margin: 3rem auto;
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+  
+  section {
+    overflow-y: auto;
+    height: 100%;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+  }
+  
+  /* Other styles */
+  section {
+    padding: 1rem;
+
+    background-color: white;
+  }
+
+  
+  section:nth-child(2n) {
+    background-color: white;
+  }
+  
+  section:nth-child(3n) {
+    background-color: white;
+  }
+
+  section:nth-child(4n) {
+    background-color: white;
+  }
+
+  .profileimg{
+    margin-right: 2rem;
+    position: sticky;
+    top: 0;
+  }
+  
+  .flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4vh;
+  }
+
+
+  h2{
+    font-family: "Audiowide", sans-serif;
+    font-size: 55px;
+
+  }
+
+  h3{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bolder;
+    font-size: 40px;
+  }
+
+  p{
+    font-family: "Ubuntu";
+    font-size: 25px;
+    line-height: 1.4;
+  }
