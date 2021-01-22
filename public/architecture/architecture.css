@@ -25,7 +25,7 @@
     height: 85vh;
     margin: 3rem auto;
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
   }
   
