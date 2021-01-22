@@ -8,6 +8,7 @@
     justify-content: space-evenly;
     align-items: center;
     list-style: none;
+    margin-bottom: 20vh;
 }
 
 .main{
@@ -55,3 +56,17 @@
 }
 .imgref:hover > img {opacity: 0.3;} 
 .imgref:hover > .imagelabel {opacity: 3;}
+
+h1{
+    font-family: "Audiowide", sans-serif;
+    font-size: 55px;
+
+}
+
+.flex-vert{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}

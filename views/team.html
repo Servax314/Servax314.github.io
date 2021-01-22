@@ -15,7 +15,7 @@
 
   <div class="navbar">
     <a href="/">About</a>
-    <a href="/architecture">Robot architechture</a>
+    <a href="/architecture">Robot architecture</a>
     <a href="/scode">Source code</a>
     <a href="/algo">Algorithms</a>
     <a href="/team">Team</a>
@@ -40,9 +40,67 @@
              <p>I have designed, coded the strategy, and made the code integration. Nicolas helped me to debug the whole file. </p>
              <p>At first the algorithm part was quite challenging. The fact that we cannot meet in person and work physically with the robot make the whole process harder. I tried to find a strategy that would be simple to explain, debug, test and collaborate on. The simple idea that came to my mind was “replication”. I tried to design a way for the robot to always do the same thing when it spots a container.</p>
              <p>At the beginning of the project, Brehima did not know how to access the position of the robot so I tried to figure out a way to get around this. I finally came up with the idea of putting the sonar sensor at a side of the robot and the touch sensor at the front. I have learned through this, how to use in an efficient way “flags” to code the strategy. With this approach the robot can adapt to several configurations. It was a plus since we did not at the time how the arena would be. </p>
+             <p>Above all, this project has been a godsend for learning C. I took the C training course offered by Open Classroom in parallel and was able to put the things I learned into practice. It really helped me take the plunge! </p>
             </div>
-          <img src="/team/jb_strat.png" style="width: 20%; margin-left: 2vw;margin-top: 7vh;">
+            <img src="/team/jb_strat.png" style="width: 20%; margin-left: 2vw;margin-top: 7vh;">
           </div>
+          <h3>Threads</h3>
+          <p>I first wrote the program without the use of threads. However, in case we need to do more complex actions I decided to use one thread dedicated to the sonar sensor. </p>
+          <p>I realized that there are different ways to share data among the threads. In our program, I used structures that contain pointers. It was for clarity sake since we manipulate a lot of data.</p>
+          <p>The simple C program below explain the structure of the code and its expected behaviour</p>
+          <ol>
+              <li>#include <pthread.h></li>
+              <li>#include <stdio.h></li>
+              <li>#include <stdlib.h></li>
+              <li>#include <unistd.h></li>
+              <li></li>
+              <li>typedef struct args1 {int* a;} args1;</li>
+              <li>typedef struct args2 {int* a;} args2;</li>
+              <li></li>
+              <li>void args_init1(args1* args,int* a){args->a= a;}</li>
+              <li>void args_init2(args2* args,int* a){args->a= a;}</li>
+              <li></li>
+              <li></li>
+              <li>void *print_a(void *input) {</li>
+              <li style="padding-left:2vw">	args1* arg = input;</li>
+              <li style="padding-left:2vw">	sleep(1);</li>
+              <li style="padding-left:2vw">	while(1){</li>
+              <li style="padding-left:4vw">		while( *(arg->a)>0 ){sleep(1); printf("%d ",*(arg->a));}</li>
+              <li style="padding-left:4vw">		printf("\nbooooom !!");</li>
+              <li style="padding-left:2vw">	}</li>
+              <li>}</li>
+              <li></li>
+              <li>void *modify_a(void *input) {</li>
+              <li style="padding-left:2vw">	args2* arg = input;</li>
+              <li style="padding-left:2vw">	while(1){sleep(2); *(arg->a) -=1;}</li>
+              <li>}</li>
+              <li></li>
+              <li>int main() {</li>
+              <li style="padding-left:2vw">	int a = 4;</li>
+              <li style="padding-left:2vw">	args1 A1;</li>
+              <li style="padding-left:2vw">	args2 A2;</li>
+              <li style="padding-left:2vw">	args_init1(&A1,&a);</li>
+              <li style="padding-left:2vw">	args_init2(&A2,&a);</li>
+              <li></li>
+              <li style="padding-left:2vw">	pthread_t t1, t2;</li>
+              <li style="padding-left:2vw">	int err1 = pthread_create(&t1, NULL, print_a, (void *)&A1);</li>
+              <li style="padding-left:2vw">	int err2 = pthread_create(&t2, NULL, modify_a, (void *)&A2);</li>
+              <li style="padding-left:2vw">	if(err1||err2) { printf("thread error");}</li>
+              <li></li>
+              <li style="padding-left:2vw">	pthread_join(t1, NULL);</li>
+              <li style="padding-left:2vw">	pthread_join(t2, NULL);</li>
+              <li></li>
+              <li style="padding-left:2vw">	return 0;</li>
+              <li>}</li>
+          </ol>
+          <p>Here is its output</p>
+          <ol>
+            <li>3 3 2 2 1 1 </li>
+            <li>booooom !!</li>
+            <li>booooom !!</li>
+          </ol>
+
+
         </div>
       </section>
       <section>

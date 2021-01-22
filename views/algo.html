@@ -4,21 +4,62 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="/algorithm/algorithm.css">
+    <link rel="stylesheet" href="/about/about.css">
     <link rel="stylesheet" href="/navbar/navbar.css">
     <script src="/about/algo.js"></script>
     <script src="/navbar/navbar.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
   </head>
 
   <div class="navbar">
     <a href="/">About</a>
-    <a href="/architecture">Robot architechture</a>
+    <a href="/architecture">Robot architecture</a>
     <a href="/scode">Source code</a>
     <a href="/algo">Algorithms</a>
     <a href="/team">Team</a>
   </div>
 
   <div class = 'main'>
-    
+    <h1 style="width:100%;display: block;margin-left: auto;margin-right: auto; text-align: center;">ALGORITHMS</h1>
+    <p >The strategy is based on “replication”. An illustration of the strategy is provided below:</p>
+
+    <div class="flex">
+      <a href="/algorithm/robot_Os.png" target="_blank">
+        <img src="/algorithm/robot_Os.png" alt="" style="width: 25vw;"/>
+      </a>
+      <a href="/algorithm/laststratOs.png" target="_blank">
+        <img src="/algorithm/laststratOs.png" alt="" style="width: 60vw;"/>
+      </a>
+    </div>
+
+    <p>To implement our strategy we have to use flags to enable the robot to know the actions it should take according to the situation it encounters. Hence, the different variables are the corner stone of the strategy. </p>
+    <ol>
+      <li>bool loaded_robot;</li>
+      <li>bool edge_detected; </li>
+      <li>bool obstacle_touched;</li>
+      <li>bool empty;</li>
+      <li>int heading; // -1 south / +1 north (top of the map) </li>
+      <li>int robot_y_position;</li>
+    </ol>
+    <p>The different functions (names are self-explanatory):  </p>
+    <ul>
+      <li>find_next_container:
+        This function is responsible to find the next container in the map. For that, the function needs to monitor if an edge is detected (edge_detected). It also needs the heading of the robot to position it. Furthermore, it needs to know if the unknown cube has already been spotted or not (unknown_cube) to perform the move_toward_the_wall function. </li>
+      <li>type_of_container:
+        To know the type of the container spotted by the sonar we need to know:
+        - the heading of the robot 
+        - the position of the robot on the y axis 
+        - the positions of all the containers on the y axis 
+        Examples:
+        If the robot is in the first zone (unknown zone) then the cube is the unknown cube.
+        If the robot heads north (top of the map) then the cube is a cube containing balls. </li>
+      <li>go_to_container:
+        To go to the container spotted we need to know the heading of the robot and the action to perform (grabbing or releasing the balls) when the cube is hurted (obstacle_touched). </li>
+    </ul>
+    <p style="margin-bottom: 15vh;">The unknown cube can have a random angle compare to the others, thereby to apply our “replication” approach, we program the robot to push the cube toward the wall to make it parallel to it. From there, we just need to move the robot backward, make a quarter turn, move backward again and then we can go anew to the first step of the process but this time we know that the unknown cube is in a right position – it will be considered as normal cube.  
+      This approach allows to use the sensors and the robot in a very simple manner. Hence, the behaviour is consistent. In addition, we can update the model quite easily and change the strategy according to our needs. </p>
 
 
 

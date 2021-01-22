@@ -1,0 +1,43 @@
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+typedef struct args1 {int* a;} args1;
+typedef struct args2 {int* a;} args2;
+
+void args_init1(args1* args,int* a){args->a= a;}
+void args_init2(args2* args,int* a){args->a= a;}
+
+
+void *print_a(void *input) {
+	args1* arg = input;
+	sleep(1);
+	while(1){
+		while( *(arg->a)>0 ){sleep(1); printf("%d ",*(arg->a));}
+		printf("\nbooooom !!"); 
+	}
+}
+
+void *modify_a(void *input) {
+	args2* arg = input;
+	while(1){sleep(2); *(arg->a) -=1;}
+}
+
+int main() {
+	int a = 4; 
+	args1 A1;
+	args2 A2;
+	args_init1(&A1,&a);
+	args_init2(&A2,&a);
+
+	pthread_t t1, t2;
+	int err1 = pthread_create(&t1, NULL, print_a, (void *)&A1);
+	int err2 = pthread_create(&t2, NULL, modify_a, (void *)&A2);
+	if(err1||err2) { printf("thread error");}
+	
+	pthread_join(t1, NULL);
+	pthread_join(t2, NULL);
+	
+	return 0;
+}

@@ -1,0 +1,43 @@
+<li>#include <pthread.h></li>
+<li>#include <stdio.h></li>
+<li>#include <stdlib.h></li>
+<li>#include <unistd.h></li>
+<li></li>
+<li>typedef struct args1 {int* a;} args1;</li>
+<li>typedef struct args2 {int* a;} args2;</li>
+<li></li>
+<li>void args_init1(args1* args,int* a){args->a= a;}</li>
+<li>void args_init2(args2* args,int* a){args->a= a;}</li>
+<li></li>
+<li></li>
+<li>void *print_a(void *input) {</li>
+<li>	args1* arg = input;</li>
+<li>	sleep(1);</li>
+<li>	while(1){</li>
+<li>		while( *(arg->a)>0 ){sleep(1); printf("%d ",*(arg->a));}</li>
+<li>		printf("\nbooooom !!");</li>
+<li>	}</li>
+<li>}</li>
+<li></li>
+<li>void *modify_a(void *input) {</li>
+<li>	args2* arg = input;</li>
+<li>	while(1){sleep(2); *(arg->a) -=1;}</li>
+<li>}</li>
+<li></li>
+<li>int main() {</li>
+<li>	int a = 4;</li>
+<li>	args1 A1;</li>
+<li>	args2 A2;</li>
+<li>	args_init1(&A1,&a);</li>
+<li>	args_init2(&A2,&a);</li>
+<li></li>
+<li>	pthread_t t1, t2;</li>
+<li>	int err1 = pthread_create(&t1, NULL, print_a, (void *)&A1);</li>
+<li>	int err2 = pthread_create(&t2, NULL, modify_a, (void *)&A2);</li>
+<li>	if(err1||err2) { printf("thread error");}</li>
+<li></li>
+<li>	pthread_join(t1, NULL);</li>
+<li>	pthread_join(t2, NULL);</li>
+<li></li>
+<li>	return 0;</li>
+<li>}</li>

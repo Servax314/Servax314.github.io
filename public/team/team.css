@@ -82,3 +82,17 @@
     font-size: 25px;
     line-height: 1.4;
   }
+
+    ol{
+      padding-left: 4vw;
+      padding-top: 2vh;
+      padding-bottom: 2vh;
+      background-color: rgb(41, 29, 53);
+      font-family: monospace;
+      font-size: 20px;
+      margin-left: 4vw;
+      margin-right: 10vw;
+      color: wheat;
+      border-radius: 20px;
+      line-height: 1.4;
+    }
